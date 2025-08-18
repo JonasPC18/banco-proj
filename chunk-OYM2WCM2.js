@@ -1,0 +1,1 @@
+import{Ma as t,Na as o,Ya as n,va as s}from"./chunk-KVI7UVKU.js";var m=class a{static \u0275fac=function(e){return new(e||a)};static \u0275cmp=s({type:a,selectors:[["ng-component"]],decls:4,vars:0,template:function(e,i){e&1&&(t(0,"h1"),n(1,"Cart\xF5es"),o(),t(2,"p"),n(3,"Gest\xE3o de cart\xF5es (futura)."),o())},encapsulation:2})};export{m as CartoesComponent};

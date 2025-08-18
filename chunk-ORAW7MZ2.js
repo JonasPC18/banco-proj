@@ -1,0 +1,1 @@
+import{Ma as t,Na as n,Ya as o,va as m}from"./chunk-KVI7UVKU.js";var s=class a{static \u0275fac=function(e){return new(e||a)};static \u0275cmp=m({type:a,selectors:[["ng-component"]],decls:4,vars:0,template:function(e,i){e&1&&(t(0,"h1"),o(1,"Pagamentos"),n(),t(2,"p"),o(3,"Tela de pagamentos (futura)."),n())},encapsulation:2})};export{s as PagamentosComponent};
