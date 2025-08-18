@@ -1,12 +1,25 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { TopbarComponent } from './shared/topbar/topbar.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+  standalone: true,
+  imports: [CommonModule, RouterOutlet, TopbarComponent],
+  template: `
+    <app-topbar appName="Banco Simples"></app-topbar>
+
+    <main class="conteudo">
+      <router-outlet></router-outlet>
+    </main>
+
+    <footer class="rodape">
+      <small>© {{ currentYear }} Banco Simples — protótipo.</small>
+    </footer>
+  `,
+  styleUrls: ['./app.scss']
 })
-export class App {
-  protected readonly title = signal('banco-proj');
+export class AppComponent {
+  currentYear = new Date().getFullYear();
 }

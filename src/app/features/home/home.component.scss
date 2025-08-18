@@ -1,0 +1,45 @@
+/* Barra de saldo exibida na Home */
+.saldo-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(16,185,129,0.08);
+  border: 1px solid rgba(16,185,129,0.25);
+  padding: 6px 10px;
+  border-radius: 12px;
+  margin: 16px 0;
+
+  .label { color: var(--muted); }
+  .valor { font-weight: 700; color: var(--ok); }
+  .toggle {
+    margin-left: 4px;
+    border: none;
+    background: transparent;
+    color: var(--text);
+    opacity: .75;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 8px;
+    transition: 150ms ease;
+    &:hover { background: rgba(255,255,255,.06); opacity: 1; }
+  }
+}
+
+/* Cartões de atalho */
+.cards {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+
+  h2 { margin: 0 0 8px; font-size: 18px; }
+  p { margin: 0; color: var(--muted); }
+}

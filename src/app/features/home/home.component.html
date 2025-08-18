@@ -1,0 +1,10 @@
+<div class="saldo-bar">
+  <span class="label">Saldo:</span>
+  <span class="valor" *ngIf="balance.mostrar(); else oculto">
+    {{ balance.saldo() | currency:'BRL':'symbol':'1.2-2' }}
+  </span>
+  <ng-template #oculto>••••••</ng-template>
+  <button (click)="balance.toggleMostrar()">
+    {{ balance.mostrar() ? 'Ocultar' : 'Mostrar' }}
+  </button>
+</div>
