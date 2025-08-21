@@ -1,0 +1,17 @@
+<aside class="sidebar">
+  <div class="logo">
+    <div class="logo-mark"></div>
+    <span class="logo-text">Banking<br>Online</span>
+  </div>
+
+  <nav>
+    <a *ngFor="let it of items"
+       class="nav-item"
+       [routerLink]="it.link"
+       routerLinkActive="active"
+       [routerLinkActiveOptions]="{ exact: it.exact }">
+      <span class="material-symbols-rounded">{{ it.icon }}</span>
+      <span class="label">{{ it.label }}</span>
+    </a>
+  </nav>
+</aside>

@@ -1,22 +1,27 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { TopbarComponent } from './shared/topbar/topbar.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, TopbarComponent],
+  imports: [CommonModule, RouterOutlet, SidebarComponent],
   template: `
-    <app-topbar appName="Banco Simples"></app-topbar>
+    <div class="layout">
+      <app-sidebar></app-sidebar>
 
-    <main class="conteudo">
-      <router-outlet></router-outlet>
-    </main>
+      <main class="main">
 
-    <footer class="rodape">
-      <small>© {{ currentYear }} Banco Simples — protótipo.</small>
-    </footer>
+        <section class="conteudo">
+          <router-outlet></router-outlet>
+        </section>
+
+        <footer class="rodape">
+          <small>© {{ currentYear }} Banco Simples — protótipo.</small>
+        </footer>
+      </main>
+    </div>
   `,
   styleUrls: ['./app.scss']
 })
