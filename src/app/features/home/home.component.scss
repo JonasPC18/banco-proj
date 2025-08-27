@@ -1,45 +1,31 @@
-/* Barra de saldo exibida na Home */
-.saldo-bar {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(16,185,129,0.08);
-  border: 1px solid rgba(16,185,129,0.25);
-  padding: 6px 10px;
-  border-radius: 12px;
-  margin: 16px 0;
+.page { max-width: 920px; margin: 24px auto; padding: 0 12px; }
 
-  .label { color: var(--muted); }
-  .valor { font-weight: 700; color: var(--ok); }
-  .toggle {
-    margin-left: 4px;
-    border: none;
-    background: transparent;
-    color: var(--text);
-    opacity: .75;
-    cursor: pointer;
-    padding: 4px 8px;
-    border-radius: 8px;
-    transition: 150ms ease;
-    &:hover { background: rgba(255,255,255,.06); opacity: 1; }
+.card {
+  border: 1px solid #e5e7eb; background: #fff; border-radius: 14px;
+  padding: 22px 18px; box-shadow: 0 1px 2px rgba(0,0,0,.04);
+}
+
+.saldo-card { margin-bottom: 8px; }
+
+.saldo-top {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;
+  .titulo { margin: 0; font-size: 14px; color: #6b7280; font-weight: 600; }
+  .ghost {
+    border: 1px solid #d1d5db; background: #fff; color: #111827;
+    padding: 6px 10px; border-radius: 10px; cursor: pointer;
   }
 }
 
-/* Cartões de atalho */
-.cards {
-  margin-top: 22px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 16px;
+.saldo-valor {
+  font-size: clamp(32px, 6vw, 48px); font-weight: 800; letter-spacing: .3px;
+  margin: 6px 0 16px;
 }
 
-.card {
-  background: var(--card);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 16px;
-  padding: 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-
-  h2 { margin: 0 0 8px; font-size: 18px; }
-  p { margin: 0; color: var(--muted); }
+.saldo-actions {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  .btn {
+    padding: 10px 14px; border-radius: 10px; border: 1px solid #d1d5db;
+    text-decoration: none; color: #111827; background: #fff; font-weight: 600;
+  }
+  .btn.primary { border: none; background: #111827; color: #fff; }
 }

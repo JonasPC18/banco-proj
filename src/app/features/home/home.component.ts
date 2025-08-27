@@ -1,13 +1,19 @@
-import { Component, inject } from '@angular/core';
-import { CommonModule, CurrencyPipe } from '@angular/common';
-import { BalanceService } from '../../core/balance.service';
+import { Component, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
+  selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, CurrencyPipe],
+  imports: [CommonModule, RouterModule],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  balance = inject(BalanceService);
+  private _mostrar = signal(true);
+  private _saldo = signal<number>(3250.75);
+
+  mostrar() { return this._mostrar(); }
+  saldo() { return this._saldo(); }
+  toggleMostrar() { this._mostrar.update(v => !v); }
 }

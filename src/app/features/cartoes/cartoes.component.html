@@ -1,0 +1,37 @@
+<div class="wrap">
+  <header class="header">
+    <h1>Meus cartões</h1>
+    <button class="primary" type="button" (click)="adicionarCartao()">Adicionar cartão</button>
+  </header>
+
+  <section class="grid">
+    <article class="card azul" *ngFor="let c of cartoes()">
+      <div class="card-top">
+        <span class="brand">{{ c.bandeira }}</span>
+        <span class="status" [class.locked]="c.bloqueado">
+          {{ c.bloqueado ? 'Bloqueado' : 'Ativo' }}
+        </span>
+      </div>
+
+      <div class="number">{{ masked(c) }}</div>
+
+      <div class="row">
+        <div>
+          <div class="label">TITULAR</div>
+          <div class="value">{{ c.titular }}</div>
+        </div>
+        <div>
+          <div class="label">VALIDADE</div>
+          <div class="value">{{ c.validade }}</div>
+        </div>
+      </div>
+
+      <div class="card-actions">
+        <button class="ghost" type="button" (click)="toggleBloqueio(c)">
+          {{ c.bloqueado ? 'Desbloquear' : 'Bloquear' }}
+        </button>
+        <button class="danger" type="button" (click)="cancelar(c)">Cancelar</button>
+      </div>
+    </article>
+  </section>
+</div>
