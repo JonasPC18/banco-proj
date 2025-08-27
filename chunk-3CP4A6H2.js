@@ -1,1 +1,0 @@
-import{Sa as n,Ta as t,cb as a,za as s}from"./chunk-DDFKF53M.js";var r=class o{static \u0275fac=function(e){return new(e||o)};static \u0275cmp=s({type:o,selectors:[["ng-component"]],decls:4,vars:0,template:function(e,m){e&1&&(n(0,"h1"),a(1,"Transfer\xEAncias"),t(),n(2,"p"),a(3,"Tela de transfer\xEAncias (futura)."),t())},encapsulation:2})};export{r as TransferenciasComponent};
