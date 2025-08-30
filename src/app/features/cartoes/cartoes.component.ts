@@ -74,7 +74,10 @@ export class CartoesComponent {
   }
 
   masked(c: Cartao) {
-    // exibe como **** **** **** 1234
-    return `**** **** **** ${c.final}`;
+    // exibe como números aleatórios + últimos 4 reais
+    const randomDigits = Array.from({ length: 12 }, () =>
+      Math.floor(Math.random() * 10),
+    ).join('');
+    return `${randomDigits}${c.final}`;
   }
 }
